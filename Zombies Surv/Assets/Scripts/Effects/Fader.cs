@@ -6,8 +6,9 @@ using UnityEngine;
 public class Fader : MonoBehaviour
 {
     [SerializeField] private Renderer fadeRenderer;
-    [SerializeField] private float fadeDuraction = 2f;
-    [SerializeField] private float minAlpha = 0.2f;
+
+    private const float fadeDuraction = 0.8f;
+    private const float minAlpha = 0.2f;
 
     private bool isFade;
 
