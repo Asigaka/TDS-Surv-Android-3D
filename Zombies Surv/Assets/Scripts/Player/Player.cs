@@ -10,14 +10,12 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerInventory inventory;
     [SerializeField] private PlayerCamera tdsCamera;
 
-    private void Start()
-    {
-        Initialize();
-    }
+    public PlayerInventory Inventory { get => inventory; }
 
     public void Initialize()
     {
         movement.Initialize();
+        inventory.Initialize();
     }
 
     private void Update()

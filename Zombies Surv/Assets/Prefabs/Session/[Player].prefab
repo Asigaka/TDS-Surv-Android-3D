@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 7707989861139735435}
   - component: {fileID: 6967984553825457331}
   - component: {fileID: 6029011379517097570}
+  - component: {fileID: 1725604574801450158}
   - component: {fileID: 88769233024644812}
   m_Layer: 6
   m_Name: Player
@@ -284,7 +285,7 @@ MonoBehaviour:
   movement: {fileID: 6029011379517097570}
   combat: {fileID: 0}
   interactions: {fileID: 0}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1725604574801450158}
   tdsCamera: {fileID: 0}
 --- !u!114 &6029011379517097570
 MonoBehaviour:
@@ -301,6 +302,26 @@ MonoBehaviour:
   moveJoys: {fileID: 0}
   lookJoys: {fileID: 0}
   speed: 5
+--- !u!114 &1725604574801450158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707989861139735432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8c9eba871f7e64ea84dc40e856ec7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startItems:
+  - itemInfo: {fileID: 11400000, guid: dcbb69952c36ac040a3d5eb9e9d36e05, type: 2}
+    minAmount: 5
+    maxAmount: 5
+  - itemInfo: {fileID: 11400000, guid: 2e6d94fa942a2a447b437f0eed013ed2, type: 2}
+    minAmount: 3
+    maxAmount: 3
+  inventory: []
 --- !u!54 &88769233024644812
 Rigidbody:
   m_ObjectHideFlags: 0
