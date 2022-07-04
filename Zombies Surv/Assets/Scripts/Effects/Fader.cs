@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class Fader : MonoBehaviour
 {
-    [SerializeField] private Renderer fadeRenderer;
+    private Renderer fadeRenderer;
 
     private const float fadeDuraction = 0.8f;
     private const float minAlpha = 0.2f;
 
     private bool isFade;
+
+    private void Awake()
+    {
+        fadeRenderer = GetComponent<Renderer>();
+    }
 
     public void Fade()
     {

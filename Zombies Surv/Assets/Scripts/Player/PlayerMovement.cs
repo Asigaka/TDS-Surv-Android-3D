@@ -26,20 +26,28 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void MovementInputs()
+    public void MovementInputs(DeviceType deviceType)
     {
-#if UNITY_EDITOR
-        moveHor = Input.GetAxisRaw("Horizontal");
-        moveVer = Input.GetAxisRaw("Vertical");
-#else
-        moveHor = moveJoys.Horizontal;
-        moveVer = moveJoys.Vertical;
-#endif
-        lookHor = lookJoys.Horizontal;
-        lookVer = lookJoys.Vertical;
+        switch (deviceType)
+        {
+            case DeviceType.Desktop:
+                moveHor = Input.GetAxisRaw("Horizontal");
+                moveVer = Input.GetAxisRaw("Vertical");
+
+                lookHor = lookJoys.Horizontal;
+                lookVer = lookJoys.Vertical;
+                break;
+            case DeviceType.Handheld:
+                lookHor = lookJoys.Horizontal;
+                lookVer = lookJoys.Vertical;
+
+                moveHor = moveJoys.Horizontal;
+                moveVer = moveJoys.Vertical;
+                break;
+        }
     }
 
-    public void Look()
+    public void LookAndroid()
     {
         lookDir = new Vector3(lookHor, 0, lookVer).normalized;
 
@@ -57,19 +65,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Move()
+    public void LookPC()
     {
-        moveDir = new Vector3(moveHor, 0, moveVer).normalized;
+
+    }
+
+    public void Move(out Vector3 direction)
+    {
+        moveDir = new Vector3(moveHor, 0, moveVer);
 
         if (isRunning())
         {
+            moveDir.Normalize();
             rb.velocity = moveDir * speed;
         }
-    }
 
-    public void RotateToTarget(Transform target)
-    {
-        transform.LookAt(target);
+
+        direction = Vector3.zero;
+        direction.z = Vector3.Dot(moveDir.normalized, transform.forward);
+        direction.x = Vector3.Dot(moveDir.normalized, transform.right);
     }
 
     public bool isRunning()
