@@ -8,6 +8,7 @@ public class ItemObject : Interactable
 
     public override void Interactive()
     {
-
+        ItemsHandler.AddItem(item.ItemInfo, item.Amount);
+        Destroy(gameObject);
     }
 }
