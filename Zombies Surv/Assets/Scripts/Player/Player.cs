@@ -22,12 +22,15 @@ public class Player : MonoBehaviour
     {
         movement.Initialize();
         inventory.Initialize();
+        interactions.Initialize();
     }
 
     private void Update()
     {
         movement.MovementInputs(deviceType);
         movement.LookAndroid();
+
+        interactions.CheckInteractablesAround();
     }
 
     private void FixedUpdate()

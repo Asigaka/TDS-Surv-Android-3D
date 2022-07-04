@@ -1,18 +1,49 @@
+using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private UIScreen[] screens;
+    [SerializeField] private ScreenType startScreen;
+
+    [Space]
+    [SerializeField] private HUDScreen hud;
+
+    [HideInInspector] public UnityEvent onScreenChange;
+
+    private ScreenType currentScreen;
+
+    public HUDScreen HUD { get => hud; }
+
+    public void Initialize()
     {
-        
+        foreach (UIScreen screen in screens)
+        {
+            screen.Initialize();
+        }
+
+        SwitchScreen(startScreen);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SwitchScreen(ScreenType toType)
     {
-        
+        foreach (UIScreen screen in screens)
+        {
+            screen.gameObject.SetActive(screen.ScreenType == toType);
+        }
+
+        currentScreen = toType;
+        onScreenChange.Invoke();
+    }
+
+    public void ClearTransformChildren(Transform parent)
+    {
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            Destroy(parent.GetChild(i).gameObject);
+        }
     }
 }

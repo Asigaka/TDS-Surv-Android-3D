@@ -4,15 +4,60 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private float interactionsRange = 2;
+    [SerializeField] private LayerMask interactionsLayers;
+
+    [SerializeField] private Interactable currentInteractable;
+    private Session session;
+
+    public Interactable CurrentInteractable { get => currentInteractable;
+        private set
+        {
+            currentInteractable = value;
+            session.UI.HUD.SetInteractiveBtnActive(value != null);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize()
     {
-        
+        session = Session.Instance;
+        session.UI.HUD.InteractBtn.onClick.AddListener(InteractWithCurrent);
+    }
+
+    public void CheckInteractablesAround()
+    {
+        Collider[] checkColliders = Physics.OverlapSphere(transform.position, interactionsRange, interactionsLayers);
+
+        foreach (Collider collider in checkColliders)
+        {
+            Interactable newInteractable = collider.GetComponent<Interactable>();
+
+            if (newInteractable)
+            {
+                if (CurrentInteractable)
+                {
+                    CurrentInteractable.OnInvisible();
+                }
+
+                CurrentInteractable = newInteractable;
+                CurrentInteractable.OnVisible();
+                return;
+            }
+        }
+
+        if (CurrentInteractable)
+        {
+            CurrentInteractable.OnInvisible();
+            CurrentInteractable = null;
+        }
+    }
+
+    public void InteractWithCurrent()
+    {
+        if (currentInteractable)
+        {
+            Debug.Log("Interact with " + currentInteractable);
+            currentInteractable.Interactive();
+        }
     }
 }

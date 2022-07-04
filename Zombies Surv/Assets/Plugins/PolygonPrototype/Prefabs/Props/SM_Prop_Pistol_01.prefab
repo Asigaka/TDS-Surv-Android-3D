@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4862751809227030}
   - component: {fileID: 33571337996835642}
   - component: {fileID: 23003446651895028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_Pistol_Mag_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 33918380136585664}
   - component: {fileID: 23987613557779748}
   - component: {fileID: 4232502405080892082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_Pistol_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347901682671290}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4646481785218198}
   - component: {fileID: 33779238778194854}
   - component: {fileID: 23868768537822994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_Pistol_Slide_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 4523919350459116}
   - component: {fileID: 33584173434331546}
   - component: {fileID: 23649590273766554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_Pistol_Trigger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

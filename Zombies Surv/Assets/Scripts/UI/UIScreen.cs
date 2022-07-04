@@ -1,18 +1,18 @@
+using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIScreen : MonoBehaviour
+public abstract class UIScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private ScreenType screenType;
 
-    // Update is called once per frame
-    void Update()
+    public ScreenType ScreenType { get => screenType; }
+
+    protected bool initialized;
+
+    public virtual void Initialize()
     {
-        
+        initialized = true;
     }
 }

@@ -257,6 +257,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346d697f92b297b48980ff779efa75fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsRange: 2
+  interactionsLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  currentInteractable: {fileID: 0}
 --- !u!54 &88769233024644812
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -466,7 +471,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 104.933
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5040065926979464046, guid: 194f8fbf67729fd40936b3465af2cc47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040097272287387248, guid: 194f8fbf67729fd40936b3465af2cc47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040450350107622290, guid: 194f8fbf67729fd40936b3465af2cc47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040682469137516890, guid: 194f8fbf67729fd40936b3465af2cc47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5041644811291134538, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
+    - {fileID: 5041644811291134539, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
 --- !u!1 &209271440668692803 stripped
 GameObject:
