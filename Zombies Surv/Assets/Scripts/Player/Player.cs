@@ -17,10 +17,13 @@ public class Player : MonoBehaviour
     public PlayerInventory Inventory { get => inventory; }
 
     private Vector3 moveDir;
+    private Session session;
 
     public void Initialize()
     {
-        movement.Initialize();
+        session = Session.Instance;
+
+        movement.Initialize(session.UI.HUD.MoveJoystick, session.UI.HUD.LookJoystick);
         inventory.Initialize();
         interactions.Initialize();
     }

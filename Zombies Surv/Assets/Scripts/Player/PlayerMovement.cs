@@ -5,14 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Components")]
-    [SerializeField] private Joystick moveJoys;
-    [SerializeField] private Joystick lookJoys;
-
-    [Space]
     [SerializeField] private float speed;
 
     private Rigidbody rb;
+    private Joystick moveJoys;
+    private Joystick lookJoys;
     private float turnSmoothVelocity;
     private Vector3 lookDir;
     private Vector3 moveDir;
@@ -21,9 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private float lookHor;
     private float lookVer;
 
-    public void Initialize()
+    public void Initialize(Joystick move, Joystick look)
     {
         rb = GetComponent<Rigidbody>();
+
+        moveJoys = move;
+        lookJoys = look;
     }
 
     public void MovementInputs(DeviceType deviceType)
