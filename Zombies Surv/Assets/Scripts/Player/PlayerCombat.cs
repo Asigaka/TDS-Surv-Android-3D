@@ -4,15 +4,53 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform weaponsContent;
+
+    private WeaponModel equipedWeapon;
+    private List<WeaponModel> weaponModels;
+
+    public void Initialize()
     {
-        
+        FillWeaponsList();
+        EquipWeapon(null);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FillWeaponsList()
     {
-        
+        weaponModels = new List<WeaponModel>();
+
+        for (int i = 0; i < weaponsContent.childCount; i++)
+        {
+            WeaponModel weapon = weaponsContent.GetChild(i).GetComponent<WeaponModel>();
+
+            if (weapon)
+            {
+                weaponModels.Add(weapon);
+                weapon.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void EquipWeapon(WeaponItemInfo weaponInfo)
+    {
+        if (equipedWeapon)
+        {
+            equipedWeapon.gameObject.SetActive(false);
+        }
+
+        equipedWeapon = GetWeaponModelByInfo(weaponInfo);
+    }
+
+    private WeaponModel GetWeaponModelByInfo(WeaponItemInfo weaponInfo)
+    {
+        foreach (WeaponModel weapon in weaponModels)
+        {
+            if (weapon.WeaponInfo == weaponInfo)
+            {
+                return weapon;
+            }
+        }
+
+        return null;
     }
 }

@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
         movement.Initialize(session.UI.HUD.MoveJoystick, session.UI.HUD.LookJoystick);
         inventory.Initialize();
         interactions.Initialize();
+        combat.Initialize();
     }
 
     private void Update()

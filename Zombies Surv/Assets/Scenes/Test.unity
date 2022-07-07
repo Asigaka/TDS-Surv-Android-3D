@@ -406,6 +406,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1296551943}
     m_Modifications:
+    - target: {fileID: 1397468544, guid: c25ac4fdc903e7d49a7520930673ecd6, type: 3}
+      propertyPath: item.itemInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 66b4659bba1d2764892d9a2e2f5ae396,
+        type: 2}
+    - target: {fileID: 1397468544, guid: c25ac4fdc903e7d49a7520930673ecd6, type: 3}
+      propertyPath: item.maxAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397468544, guid: c25ac4fdc903e7d49a7520930673ecd6, type: 3}
+      propertyPath: item.minAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1341255972871256, guid: c25ac4fdc903e7d49a7520930673ecd6, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Rifle_01
@@ -1938,7 +1951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    itemInfo: {fileID: 11400000, guid: dcbb69952c36ac040a3d5eb9e9d36e05, type: 2}
+    itemInfo: {fileID: 11400000, guid: ca56d849a16ae6340b9653c1ef5f37bf, type: 2}
     minAmount: 1
     maxAmount: 1
 --- !u!114 &796431947
@@ -2232,18 +2245,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 655762921}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &996682070 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2479241924049444811, guid: 2f0e7cb23d3413f4d8c41c70d1fd2dda,
-    type: 3}
-  m_PrefabInstance: {fileID: 778773135016658785}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1013770883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4064495275394158, guid: 08359538d5ddc2841a5e2aa95189861b,
@@ -2785,18 +2786,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1166045409 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2479241922348140158, guid: 2f0e7cb23d3413f4d8c41c70d1fd2dda,
-    type: 3}
-  m_PrefabInstance: {fileID: 778773135016658785}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1180638085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5120,14 +5109,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 643871100, guid: 2f0e7cb23d3413f4d8c41c70d1fd2dda, type: 3}
-      propertyPath: lookJoystick
-      value: 
-      objectReference: {fileID: 1166045409}
-    - target: {fileID: 643871100, guid: 2f0e7cb23d3413f4d8c41c70d1fd2dda, type: 3}
-      propertyPath: moveJoystick
-      value: 
-      objectReference: {fileID: 996682070}
     - target: {fileID: 1672853756, guid: 2f0e7cb23d3413f4d8c41c70d1fd2dda, type: 3}
       propertyPath: player
       value: 
@@ -5402,16 +5383,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6029011379517097570, guid: a80cae770eac1284b89ee1ccf142392b,
-        type: 3}
-      propertyPath: lookJoys
-      value: 
-      objectReference: {fileID: 1166045409}
-    - target: {fileID: 6029011379517097570, guid: a80cae770eac1284b89ee1ccf142392b,
-        type: 3}
-      propertyPath: moveJoys
-      value: 
-      objectReference: {fileID: 996682070}
     - target: {fileID: 7707989862025488076, guid: a80cae770eac1284b89ee1ccf142392b,
         type: 3}
       propertyPath: m_Name

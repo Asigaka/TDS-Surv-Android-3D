@@ -11,12 +11,14 @@ public class UIManager : MonoBehaviour
 
     [Space]
     [SerializeField] private HUDScreen hud;
+    [SerializeField] private InventoryScreen inventory;
 
     [HideInInspector] public UnityEvent onScreenChange;
 
     private ScreenType currentScreen;
 
     public HUDScreen HUD { get => hud; }
+    public InventoryScreen Inventory { get => inventory; }
 
     public void Initialize()
     {

@@ -10,9 +10,11 @@ public abstract class UIScreen : MonoBehaviour
     public ScreenType ScreenType { get => screenType; }
 
     protected bool initialized;
+    protected UIManager manager;
 
     public virtual void Initialize()
     {
         initialized = true;
+        manager = Session.Instance.UI;
     }
 }
