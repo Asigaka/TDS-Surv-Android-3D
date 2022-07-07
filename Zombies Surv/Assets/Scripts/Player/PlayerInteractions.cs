@@ -28,6 +28,17 @@ public class PlayerInteractions : MonoBehaviour
     {
         Collider[] checkColliders = Physics.OverlapSphere(transform.position, interactionsRange, interactionsLayers);
 
+        if (checkColliders.Length == 0)
+        {
+            if (CurrentInteractable)
+            {
+                CurrentInteractable.OnInvisible();
+            }
+
+            CurrentInteractable = null;
+            return;
+        }
+
         foreach (Collider collider in checkColliders)
         {
             Interactable newInteractable = collider.GetComponent<Interactable>();
@@ -54,10 +65,11 @@ public class PlayerInteractions : MonoBehaviour
 
     public void InteractWithCurrent()
     {
-        if (currentInteractable)
+        if (CurrentInteractable)
         {
-            Debug.Log("Interact with " + currentInteractable);
-            currentInteractable.Interactive();
+            Debug.Log("Interact with " + CurrentInteractable);
+            CurrentInteractable.Interactive();
+            CurrentInteractable = null;
         }
     }
 }
