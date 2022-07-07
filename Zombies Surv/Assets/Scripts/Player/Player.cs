@@ -1,3 +1,4 @@
+using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,5 +46,20 @@ public class Player : MonoBehaviour
     private void LateUpdate()
     {
         animations.SetVelocity(moveDir.x, moveDir.z);
+    }
+
+    public void EquipWeapon(WeaponItemInfo weaponInfo)
+    {
+        if (weaponInfo)
+        {
+            switch (weaponInfo.HoldType)
+            {
+                case WeaponMoveType.Pistol: animations.SetPistolMove(); break;
+                case WeaponMoveType.Rifle: animations.SetRifleMove(); break;
+                default: animations.SetJustMove(); break;
+            }
+        }
+
+        combat.EquipWeapon(weaponInfo);
     }
 }

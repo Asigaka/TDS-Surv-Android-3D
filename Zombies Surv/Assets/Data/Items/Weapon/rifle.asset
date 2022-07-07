@@ -16,6 +16,7 @@ MonoBehaviour:
   itemName: Rifle
   itemDescription: 
   itemType: 1
+  holdType: 1
   damage: 2
   range: 14
   timeBetweenAttack: 0.5

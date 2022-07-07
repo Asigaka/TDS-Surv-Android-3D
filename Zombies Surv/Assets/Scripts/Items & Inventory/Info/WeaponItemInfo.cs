@@ -7,7 +7,7 @@ using UnityEngine;
 public class WeaponItemInfo : ItemInfo
 {
     [Space]
-    [SerializeField] private WeaponHoldType holdType;
+    [SerializeField] private WeaponMoveType holdType;
     [SerializeField] private float damage;
     [SerializeField] private float range;
     [SerializeField] private float timeBetweenAttack;
@@ -17,5 +17,5 @@ public class WeaponItemInfo : ItemInfo
     public float Range { get => range; }
     public float TimeBetweenAttack { get => timeBetweenAttack; }
     public ItemInfo AmmoItem { get => ammoItem; }
-    public WeaponHoldType HoldType { get => holdType; }
+    public WeaponMoveType HoldType { get => holdType; }
 }

@@ -1,3 +1,4 @@
+using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private Transform weaponsContent;
 
     private WeaponModel equipedWeapon;
-    private List<WeaponModel> weaponModels;
+    [SerializeField] private List<WeaponModel> weaponModels;
 
     public void Initialize()
     {
@@ -39,6 +40,11 @@ public class PlayerCombat : MonoBehaviour
         }
 
         equipedWeapon = GetWeaponModelByInfo(weaponInfo);
+        
+        if (equipedWeapon)
+        {
+            equipedWeapon.gameObject.SetActive(true);
+        }
     }
 
     private WeaponModel GetWeaponModelByInfo(WeaponItemInfo weaponInfo)

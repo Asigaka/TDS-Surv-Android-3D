@@ -10,6 +10,8 @@ public class ItemCell : MonoBehaviour
     [SerializeField] private Button button; 
     [SerializeField] private TextMeshProUGUI itemAmountLabel;
 
+    private ItemEntity cellItem;
+
     private void Start()
     {
         button.onClick.AddListener(OnClick);
@@ -19,10 +21,14 @@ public class ItemCell : MonoBehaviour
     {
         itemImage.sprite = item.ItemInfo.ItemSprite;
         itemAmountLabel.text = item.Amount.ToString();
+        cellItem = item;
     }
 
     private void OnClick()
     {
-
+        if (cellItem.ItemInfo is WeaponItemInfo)
+        {
+            Session.Instance.Player.EquipWeapon((WeaponItemInfo)cellItem.ItemInfo);
+        }
     }
 }
