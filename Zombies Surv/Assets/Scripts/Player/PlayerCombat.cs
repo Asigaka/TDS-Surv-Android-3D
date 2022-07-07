@@ -32,19 +32,30 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    public void EquipWeapon(WeaponItemInfo weaponInfo)
+    public WeaponModel EquipWeapon(WeaponItemInfo weaponInfo)
     {
         if (equipedWeapon)
         {
             equipedWeapon.gameObject.SetActive(false);
         }
 
-        equipedWeapon = GetWeaponModelByInfo(weaponInfo);
-        
-        if (equipedWeapon)
+        WeaponModel nextModel = GetWeaponModelByInfo(weaponInfo);
+
+        if (nextModel)
         {
-            equipedWeapon.gameObject.SetActive(true);
+            if (equipedWeapon && nextModel == equipedWeapon)
+            {
+                equipedWeapon.gameObject.SetActive(false);
+                equipedWeapon = null;
+            }
+            else
+            {
+                equipedWeapon = nextModel;
+                equipedWeapon.gameObject.SetActive(true);
+            }
         }
+
+        return equipedWeapon;
     }
 
     private WeaponModel GetWeaponModelByInfo(WeaponItemInfo weaponInfo)

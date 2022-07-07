@@ -50,16 +50,20 @@ public class Player : MonoBehaviour
 
     public void EquipWeapon(WeaponItemInfo weaponInfo)
     {
-        if (weaponInfo)
+        WeaponModel weapon = combat.EquipWeapon(weaponInfo);
+
+        if (weapon)
         {
-            switch (weaponInfo.HoldType)
+            switch (weapon.WeaponInfo.HoldType)
             {
                 case WeaponMoveType.Pistol: animations.SetPistolMove(); break;
                 case WeaponMoveType.Rifle: animations.SetRifleMove(); break;
                 default: animations.SetJustMove(); break;
             }
         }
-
-        combat.EquipWeapon(weaponInfo);
+        else
+        {
+            animations.SetJustMove();
+        }
     }
 }
