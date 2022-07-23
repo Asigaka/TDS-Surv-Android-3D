@@ -10,7 +10,7 @@ public abstract class Interactable : MonoBehaviour
 
     private MeshOutline outline;
 
-    private void Start()
+    private void Awake()
     {
         outline = GetComponent<MeshOutline>();
         outline.OutlineMode = mode;

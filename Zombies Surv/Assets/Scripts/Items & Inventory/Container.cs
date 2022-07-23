@@ -18,5 +18,6 @@ public class Container : Interactable
     public override void Interactive()
     {
         Session.Instance.UI.Container.OpenContainer(this);
+        Session.Instance.UI.SwitchScreen(Enums.ScreenType.Container);
     }
 }
