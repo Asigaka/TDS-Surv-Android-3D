@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4023415057673596}
   - component: {fileID: 33007194206028698}
   - component: {fileID: 23645653683523716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_Chest_Wood_Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,9 @@ GameObject:
   - component: {fileID: 33395427883680712}
   - component: {fileID: 23599753488265026}
   - component: {fileID: -6961014421492898531}
-  m_Layer: 0
+  - component: {fileID: 3377435186412104608}
+  - component: {fileID: 1766218046002184400}
+  m_Layer: 9
   m_Name: SM_Prop_Chest_Wood_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,3 +183,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7692592, y: 0.401952, z: 0.53506434}
   m_Center: {x: -0.00000017881393, y: 0.18780176, z: -0.00000017881393}
+--- !u!114 &3377435186412104608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802231900875454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1766218046002184400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802231900875454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5117ff869caca414daf238ec04578616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containerInfo: {fileID: 11400000, guid: 9865dbd195418254f8673e8265440dfd, type: 2}
+  containerItems: []

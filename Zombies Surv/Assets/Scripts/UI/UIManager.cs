@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [Space]
     [SerializeField] private HUDScreen hud;
     [SerializeField] private InventoryScreen inventory;
+    [SerializeField] private ContainerScreen container;
 
     [HideInInspector] public UnityEvent onScreenChange;
 
@@ -19,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     public HUDScreen HUD { get => hud; }
     public InventoryScreen Inventory { get => inventory; }
+    public ContainerScreen Container { get => container; }
 
     public void Initialize()
     {
